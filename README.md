@@ -27,6 +27,9 @@ Object Pooling:
      memory past what is required intitially where creating new entities outside the object bool will indefinately increase the amount of required memory until
      eventually none is avaliable. Spreading this object pooling across other things in the game such as the score popups or the unique dog sprites that emerge
      from the bush after each wave of ducks in the original could also benifit in this way.
+     
+     *Additional Photos of the Profiler show the increase in the number of total gameObjects and assets that must be created in memory using the different spawning
+     methods, see the three attached images in the root folder of repo
 
 Command:
 
