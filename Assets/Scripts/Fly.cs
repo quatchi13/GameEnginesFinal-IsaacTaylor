@@ -13,8 +13,9 @@ public class Fly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y >9 || transform.position.y < -6)
+        if(transform.position.y >9)
         {
+            DuckManager.instance.AddFlyAway();
             gameObject.SetActive(false);
         }
     }

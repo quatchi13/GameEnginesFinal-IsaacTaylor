@@ -6,13 +6,22 @@ public class SpawnDuck : MonoBehaviour
 {
     public List<GameObject> duckPond;
 
+    public GameObject duckPrefab;
+
+    public KeyCode currentSide = KeyCode.LeftShift;
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKeyDown(currentSide))
         {
             
             Spawn();
+        }
+
+        else if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            SpawnNew();
         }
     }
 
@@ -31,5 +40,12 @@ public class SpawnDuck : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void SpawnNew()
+    {
+        Vector3 spawnPoint = new Vector3(0,-6,0); 
+        GameObject duck = Instantiate(duckPrefab,spawnPoint, Quaternion.identity);
+        duck.GetComponent<Rigidbody>().velocity = new Vector3(0,3,0);
     }
 }
